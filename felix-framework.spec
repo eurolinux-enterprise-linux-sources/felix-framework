@@ -7,7 +7,7 @@
 
 Name:           %{project}-framework
 Version:        4.2.1
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        Apache Felix Framework
 
 Group:          Development/Libraries
@@ -39,7 +39,7 @@ API documentation for %{name}.
 %prep
 %setup -q -n %{bundle}-%{version}
 
-%mvn_file : %{project}/%{bundle}.jar
+%mvn_file : %{project}/%{bundle}
 
 %build
 %mvn_build
@@ -54,6 +54,12 @@ API documentation for %{name}.
 %doc LICENSE NOTICE
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.2.1-5
+- Mass rebuild 2013-12-27
+
+* Thu Nov 14 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 4.2.1-4
+- Fix artifact file names
+
 * Mon Aug 26 2013 Michal Srb <msrb@redhat.com> - 4.2.1-3
 - Migrate away from mvn-rpmbuild (Resolves: #997514)
 
